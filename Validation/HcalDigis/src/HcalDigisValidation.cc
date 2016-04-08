@@ -16,6 +16,7 @@
 //
 //
 
+#include "Geometry/HcalTowerAlgo/interface/HcalTrigTowerGeometry.h"
 #include <Validation/HcalDigis/interface/HcalDigisValidation.h>
 #include "FWCore/Framework/interface/MakerMacros.h"
 
@@ -91,10 +92,12 @@ void HcalDigisValidation::bookHistograms(DQMStore::IBooker &ib, edm::Run const &
     book1D(ib,"HcalDigiTask_tp_et_HB", tp_hl_et);
     book1D(ib,"HcalDigiTask_tp_et_HE", tp_hl_et);
     book1D(ib,"HcalDigiTask_tp_et_HF", tp_hl_et);
+    book1D(ib,"HcalDigiTask_tp_et_HF_v1", tp_hl_et);
     book1D(ib,"HcalDigiTask_tp_ntp", tp_hl_ntp);
     book1D(ib,"HcalDigiTask_tp_ntp_HB", tp_hl_ntp_sub);
     book1D(ib,"HcalDigiTask_tp_ntp_HE", tp_hl_ntp_sub);
     book1D(ib,"HcalDigiTask_tp_ntp_HF", tp_hl_ntp_sub);
+    book1D(ib,"HcalDigiTask_tp_ntp_HF_v1", tp_hl_ntp_sub);
     book1D(ib,"HcalDigiTask_tp_ntp_ieta", tp_hl_ieta);
     book1D(ib,"HcalDigiTask_tp_ntp_10_ieta", tp_hl_ieta);
     book2D(ib,"HcalDigiTask_tp_et_ieta", tp_hl_ieta, tp_hl_et);
@@ -468,6 +471,9 @@ void HcalDigisValidation::analyze(const edm::Event& iEvent, const edm::EventSetu
     ESHandle<CaloTPGTranscoder> decoder;
     iSetup.get<CaloTPGRecord>().get(decoder);
 
+    ESHandle<HcalTrigTowerGeometry> tp_geometry;
+    iSetup.get<CaloGeometryRecord>().get(tp_geometry);
+
     iSetup.get<HcalRecNumberingRecord>().get(htopo);
 
     //Get all handles
@@ -524,53 +530,66 @@ void HcalDigisValidation::analyze(const edm::Event& iEvent, const edm::EventSetu
 
    //TP Code
    //Counters
-   int c = 0, chb = 0, che = 0, chf = 0;
+   int c = 0, chb = 0, che = 0, chf = 0, chfv1 = 0;
 
    for (HcalTrigPrimDigiCollection::const_iterator itr = dataTPs->begin(); itr != dataTPs->end(); ++itr) {
      int ieta  = itr->id().ieta();
-     int iphi  = itr->id().iphi();
+     int tpVersion = itr->id().version();
 
      HcalSubdetector subdet = (HcalSubdetector) 0;
-     if      ( abs(ieta) <= 16 ) subdet = HcalSubdetector::HcalBarrel ;
-     else if ( abs(ieta) <= 28 ) subdet = HcalSubdetector::HcalEndcap ;
-     else if ( abs(ieta) <= 40 ) subdet = HcalSubdetector::HcalForward;
+     if      ( abs(ieta) <= 16 )
+        subdet = HcalSubdetector::HcalBarrel ;
+     else if ( abs(ieta) < tp_geometry->firstHFTower(itr->id().version()) ) 
+        subdet = HcalSubdetector::HcalEndcap ;
+     else if ( abs(ieta) <= 42 )
+        subdet = HcalSubdetector::HcalForward;
      
      /*     HcalSubdetector subdet = (HcalSubdetector) itr->id().subdet(); */
 
-     float cen = itr->SOI_compressedEt();
-     float en = decoder->hcaletValue(ieta,iphi,cen);
+     float en = decoder->hcaletValue(itr->id(), itr->t0());
      
      if (en < 0.00001) continue;
 
      //Plot the variables
+     //These plots only include the 3x2 TPs
+	if(tpVersion == 0){
+     		fill1D("HcalDigiTask_tp_et",en);
+     		fill2D("HcalDigiTask_tp_et_ieta",ieta,en);
+     		fillPf("HcalDigiTask_tp_ave_et_ieta",ieta,en);
 
-     fill1D("HcalDigiTask_tp_et",en);
-     fill2D("HcalDigiTask_tp_et_ieta",ieta,en);
-     fillPf("HcalDigiTask_tp_ave_et_ieta",ieta,en);
+     		++c;
+     		if ( subdet == HcalSubdetector::HcalBarrel ) {
+        		fill1D("HcalDigiTask_tp_et_HB",en);
+       			++chb;
+     		}
+     		if ( subdet == HcalSubdetector::HcalEndcap ) {
+       			fill1D("HcalDigiTask_tp_et_HE",en);
+       			++che;
+     		}
+     		if ( subdet == HcalSubdetector::HcalForward ) {
+       			fill1D("HcalDigiTask_tp_et_HF",en);
+       			++chf;
+     		}
 
-     ++c;
-     if ( subdet == HcalSubdetector::HcalBarrel ) {
-        fill1D("HcalDigiTask_tp_et_HB",en);
-       ++chb;
-     }
-     if ( subdet == HcalSubdetector::HcalEndcap ) {
-       fill1D("HcalDigiTask_tp_et_HE",en);
-       ++che;
-     }
-     if ( subdet == HcalSubdetector::HcalForward ) {
-       fill1D("HcalDigiTask_tp_et_HF",en);
-       ++chf;
-     }
+     		fill1D("HcalDigiTask_tp_ntp_ieta",ieta);
+     		if ( en > 10. ) fill1D("HcalDigiTask_tp_ntp_10_ieta",ieta);
+	}
 
-     fill1D("HcalDigiTask_tp_ntp_ieta",ieta);
-     if ( en > 10. ) fill1D("HcalDigiTask_tp_ntp_10_ieta",ieta);
+	if(tpVersion == 1){
+                if ( subdet == HcalSubdetector::HcalForward ) {
+                        fill1D("HcalDigiTask_tp_et_HF_v1",en);
+                        ++chfv1;
+                }
 
+	}
    }//end data TP collection 
    
    fill1D("HcalDigiTask_tp_ntp",c);
    fill1D("HcalDigiTask_tp_ntp_HB",chb);
    fill1D("HcalDigiTask_tp_ntp_HE",che);
    fill1D("HcalDigiTask_tp_ntp_HF",chf);
+
+   fill1D("HcalDigiTask_tp_ntp_HF_v1",chfv1);
 
     //~TP Code
 }
