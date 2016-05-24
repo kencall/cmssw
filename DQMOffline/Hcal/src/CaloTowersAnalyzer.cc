@@ -58,19 +58,19 @@ CaloTowersAnalyzer::CaloTowersAnalyzer(edm::ParameterSet const& conf){
   //The first three are not used
   if (useAllHistos_){
     sprintf  (histo, "emean_vs_ieta_E" );
-    emean_vs_ieta_E = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000.);
+    emean_vs_ieta_E = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000., " ");
     sprintf  (histo, "emean_vs_ieta_H" );
-    emean_vs_ieta_H = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000.);
+    emean_vs_ieta_H = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000., " ");
     sprintf  (histo, "emean_vs_ieta_EH" );
-    emean_vs_ieta_EH = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000.);
+    emean_vs_ieta_EH = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000., " ");
   }
   //These are drawn
   sprintf  (histo, "emean_vs_ieta_E1" );
-  emean_vs_ieta_E1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000.);
+  emean_vs_ieta_E1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000., " ");
   sprintf  (histo, "emean_vs_ieta_H1" );
-  emean_vs_ieta_H1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000.);
+  emean_vs_ieta_H1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000., " ");
   sprintf  (histo, "emean_vs_ieta_EH1" );
-  emean_vs_ieta_EH1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000.);
+  emean_vs_ieta_EH1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2100, -100., 2000., " ");
   //-------------------------------------------------------------------------------------------
 
   //Map energy histos are not drawn
@@ -152,13 +152,13 @@ CaloTowersAnalyzer::CaloTowersAnalyzer(edm::ParameterSet const& conf){
     emEnergyTiming_High_HB = ibooker.book2D(histo, histo, 200, 0. , 3000., 110, -120., 100.  ) ;
 
     sprintf  (histo, "CaloTowersTask_EM_Energy_Timing_profile_Low_HB" ) ;
-    emEnergyTiming_profile_Low_HB = ibooker.bookProfile(histo, histo, 40, 0. , 40., 110, -120., 100.  ) ;
+    emEnergyTiming_profile_Low_HB = ibooker.bookProfile(histo, histo, 40, 0. , 40., 110, -120., 100., "s"  ) ;
 
     sprintf  (histo, "CaloTowersTask_EM_Energy_Timing_profile_HB" ) ;
-    emEnergyTiming_profile_HB = ibooker.bookProfile(histo, histo, 200, 0. , 400., 110, -120., 100.  ) ;
+    emEnergyTiming_profile_HB = ibooker.bookProfile(histo, histo, 200, 0. , 400., 110, -120., 100., "s"  ) ;
 
     sprintf  (histo, "CaloTowersTask_EM_Energy_Timing_profile_High_HB" ) ;
-    emEnergyTiming_profile_High_HB = ibooker.bookProfile(histo, histo, 200, 0. , 3000., 110, -120., 100.  ) ;
+    emEnergyTiming_profile_High_HB = ibooker.bookProfile(histo, histo, 200, 0. , 3000., 110, -120., 100., "s"  ) ;
 
     //HAD
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_Low_HB" ) ;
@@ -171,13 +171,13 @@ CaloTowersAnalyzer::CaloTowersAnalyzer(edm::ParameterSet const& conf){
     hadEnergyTiming_High_HB = ibooker.book2D(histo, histo, 300, 0. , 3000., 70, -48., 92. ) ;
 
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_profile_Low_HB" ) ;
-    hadEnergyTiming_profile_Low_HB = ibooker.bookProfile(histo, histo, 40, 0. , 40., 70, -48., 92. ) ;
+    hadEnergyTiming_profile_Low_HB = ibooker.bookProfile(histo, histo, 40, 0. , 40., 70, -48., 92., "s" ) ;
 
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_profile_HB" ) ;
-    hadEnergyTiming_profile_HB = ibooker.bookProfile(histo, histo, 100, 0. , 200., 70, -48., 92. ) ;
+    hadEnergyTiming_profile_HB = ibooker.bookProfile(histo, histo, 100, 0. , 200., 70, -48., 92., "s" ) ;
 
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_profile_High_HB" ) ;
-    hadEnergyTiming_profile_High_HB = ibooker.bookProfile(histo, histo, 300, 0. , 3000., 70, -48., 92. ) ;
+    hadEnergyTiming_profile_High_HB = ibooker.bookProfile(histo, histo, 300, 0. , 3000., 70, -48., 92., "s" ) ;
     //-------------------------------------------------------------------------------------------
 
     //Everything else is not drawn
@@ -253,10 +253,10 @@ CaloTowersAnalyzer::CaloTowersAnalyzer(edm::ParameterSet const& conf){
     emEnergyTiming_HE = ibooker.book2D(histo, histo, 200, 0. , 800., 110, -120., 100.  ) ;
 
     sprintf  (histo, "CaloTowersTask_EM_Energy_Timing_profile_Low_HE" ) ;
-    emEnergyTiming_profile_Low_HE = ibooker.bookProfile(histo, histo, 160, 0. , 160., 110, -120., 100.  ) ;
+    emEnergyTiming_profile_Low_HE = ibooker.bookProfile(histo, histo, 160, 0. , 160., 110, -120., 100., "s"  ) ;
 
     sprintf  (histo, "CaloTowersTask_EM_Energy_Timing_profile_HE" ) ;
-    emEnergyTiming_profile_HE = ibooker.bookProfile(histo, histo, 200, 0. , 800., 110, -120., 100.  ) ;
+    emEnergyTiming_profile_HE = ibooker.bookProfile(histo, histo, 200, 0. , 800., 110, -120., 100., "s"  ) ;
 
     //HAD
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_Low_HE" ) ;
@@ -266,10 +266,10 @@ CaloTowersAnalyzer::CaloTowersAnalyzer(edm::ParameterSet const& conf){
     hadEnergyTiming_HE = ibooker.book2D(histo, histo, 200, 0. , 800., 70, -48., 92. ) ;
 
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_profile_Low_HE" ) ;
-    hadEnergyTiming_profile_Low_HE = ibooker.bookProfile(histo, histo, 160, 0. , 160., 70, -48., 92. ) ;
+    hadEnergyTiming_profile_Low_HE = ibooker.bookProfile(histo, histo, 160, 0. , 160., 70, -48., 92., "s" ) ;
 
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_profile_HE" ) ;
-    hadEnergyTiming_profile_HE = ibooker.bookProfile(histo, histo, 200, 0. , 800., 70, -48., 92. ) ;
+    hadEnergyTiming_profile_HE = ibooker.bookProfile(histo, histo, 200, 0. , 800., 70, -48., 92., "s" ) ;
     //-------------------------------------------------------------------------------------------
 
     //Everything else is not drawn
@@ -342,7 +342,7 @@ CaloTowersAnalyzer::CaloTowersAnalyzer(edm::ParameterSet const& conf){
     emEnergyTiming_HF = ibooker.book2D(histo, histo, 150, 0. , 300., 110, -120., 100.  ) ;
 
     sprintf  (histo, "CaloTowersTask_EM_Energy_Timing_profile_HF" ) ;
-    emEnergyTiming_profile_HF = ibooker.bookProfile(histo, histo, 150, 0. , 300., 110, -120., 100.  ) ;
+    emEnergyTiming_profile_HF = ibooker.bookProfile(histo, histo, 150, 0. , 300., 110, -120., 100., "s"  ) ;
 
     //HAD (requires two different sets of histograms to lower RAM usage)
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_Low_HF" ) ;
@@ -352,10 +352,10 @@ CaloTowersAnalyzer::CaloTowersAnalyzer(edm::ParameterSet const& conf){
     hadEnergyTiming_HF = ibooker.book2D(histo, histo, 200, 0. , 600., 70, -48., 92. ) ;
 
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_profile_Low_HF" ) ;
-    hadEnergyTiming_profile_Low_HF = ibooker.bookProfile(histo, histo, 40, 0. , 40., 70, -48., 92. ) ;
+    hadEnergyTiming_profile_Low_HF = ibooker.bookProfile(histo, histo, 40, 0. , 40., 70, -48., 92., "s" ) ;
 
     sprintf  (histo, "CaloTowersTask_HAD_Energy_Timing_profile_HF" ) ;
-    hadEnergyTiming_profile_HF = ibooker.bookProfile(histo, histo, 200, 0. , 600., 70, -48., 92. ) ;
+    hadEnergyTiming_profile_HF = ibooker.bookProfile(histo, histo, 200, 0. , 600., 70, -48., 92., "s" ) ;
     //-------------------------------------------------------------------------------------------
 
     //Everything else is not drawn
