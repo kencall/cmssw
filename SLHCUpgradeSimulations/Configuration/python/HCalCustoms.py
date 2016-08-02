@@ -95,6 +95,7 @@ def customise_Hcal2017(process):
         process.digiTask.tagHBHE = cms.untracked.InputTag("simHcalDigis")
         process.digiTask.tagHF = cms.untracked.InputTag("simHcalDigis")
         process.digiTask.tagHO = cms.untracked.InputTag("simHcalDigis")
+        process.dqmoffline_step.remove(process.hcalOfflineSourceSequence)
     if hasattr(process,'validation_step'):
         process.AllHcalDigisValidation.digiLabel = cms.InputTag("simHcalDigis")
 
