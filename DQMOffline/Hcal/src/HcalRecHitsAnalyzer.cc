@@ -999,7 +999,7 @@ void HcalRecHitsAnalyzer::analyze(edm::Event const& ev, edm::EventSetup const& c
 	if (ieta2 < 0) ieta2--;
         else ieta2++;
       }
-      if(sub == 3) depth2 += maxDepthHB_;	
+      if(sub == 3) depth2 += maxDepthAll_ - maxDepthHO_ + depth; //This will use the last depths for HO	
       emap[depth2-1]->Fill(double(ieta2),double(iphi),en);
 
       // to distinguish HE and HF
