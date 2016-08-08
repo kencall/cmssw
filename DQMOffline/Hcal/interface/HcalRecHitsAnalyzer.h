@@ -79,7 +79,7 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   bool        useAllHistos_;
 
   const HcalDDDRecConstants *hcons;
-  int                        maxDepthHB_, maxDepthHE_, maxDepthHO_, maxDepthHF_;
+  int                        maxDepthHB_, maxDepthHE_, maxDepthHO_, maxDepthHF_, maxDepthAll_;
 
   //RecHit Collection input tags
   edm::EDGetTokenT<HBHERecHitCollection> tok_hbhe_;
@@ -122,9 +122,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* map_depth3;
   MonitorElement* map_depth4;
 
-  std::vector<MonitorElement*> ZS_nHB;
-  std::vector<MonitorElement*> ZS_nHE;
-  std::vector<MonitorElement*> ZS_nHF;
+  std::vector<MonitorElement*> ZS_HB;
+  std::vector<MonitorElement*> ZS_HE;
+  std::vector<MonitorElement*> ZS_HF;
   MonitorElement* ZS_HB1;
   MonitorElement* ZS_HB2;
   MonitorElement* ZS_HE1;
@@ -134,6 +134,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* ZS_HF2;
   MonitorElement* ZS_HO;
 
+  std::vector<MonitorElement*> ZS_nHB;
+  std::vector<MonitorElement*> ZS_nHE;
+  std::vector<MonitorElement*> ZS_nHF;
   MonitorElement* ZS_nHB1;
   MonitorElement* ZS_nHB2;
   MonitorElement* ZS_nHE1;
@@ -143,6 +146,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* ZS_nHF2;
   MonitorElement* ZS_nHO;
 
+  std::vector<MonitorElement*> ZS_seqHB;
+  std::vector<MonitorElement*> ZS_seqHE;
+  std::vector<MonitorElement*> ZS_seqHF;
   MonitorElement* ZS_seqHB1;
   MonitorElement* ZS_seqHB2;
   MonitorElement* ZS_seqHE1;
@@ -159,6 +165,7 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
 
   MonitorElement* map_ecal;
 
+  srd::vector<MonitorElement*> emap;
   MonitorElement* emap_depth1;
   MonitorElement* emap_depth2;
   MonitorElement* emap_depth3;
@@ -176,6 +183,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* emean_vs_ieta_HF2;
   MonitorElement* emean_vs_ieta_HO;
 
+  std::vector<MonitorElement*> RMS_vs_ieta_HB;
+  std::vector<MonitorElement*> RMS_vs_ieta_HE;
+  std::vector<MonitorElement*> RMS_vs_ieta_HF;
   MonitorElement* RMS_vs_ieta_HB1;
   MonitorElement* RMS_vs_ieta_HB2;
   MonitorElement* RMS_vs_ieta_HE1;
@@ -185,6 +195,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* RMS_vs_ieta_HF2;
   MonitorElement* RMS_vs_ieta_HO;
 
+  std::vector<MonitorElement*> emean_seq_HB;
+  std::vector<MonitorElement*> emean_seq_HE;
+  std::vector<MonitorElement*> emean_seq_HF;
   MonitorElement* emean_seqHB1;
   MonitorElement* emean_seqHB2;
   MonitorElement* emean_seqHE1;
@@ -194,6 +207,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* emean_seqHF2;
   MonitorElement* emean_seqHO;
 
+  std::vector<MonitorElement*> RMS_seq_HB;
+  std::vector<MonitorElement*> RMS_seq_HE;
+  std::vector<MonitorElement*> RMS_seq_HF;
   MonitorElement* RMS_seq_HB1;
   MonitorElement* RMS_seq_HB2;
   MonitorElement* RMS_seq_HE1;
@@ -203,6 +219,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* RMS_seq_HF2;
   MonitorElement* RMS_seq_HO;
 
+  std::vector<MonitorElement*> occupancy_map_HB;
+  std::vector<MonitorElement*> occupancy_map_HE;
+  std::vector<MonitorElement*> occupancy_map_HF;
   MonitorElement* occupancy_map_HB1;
   MonitorElement* occupancy_map_HB2;
   MonitorElement* occupancy_map_HE1;
@@ -212,6 +231,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* occupancy_map_HF2;
   MonitorElement* occupancy_map_HO;
 
+  std::vector<MonitorElement*> occupancy_vs_ieta_HB;
+  std::vector<MonitorElement*> occupancy_vs_ieta_HE;
+  std::vector<MonitorElement*> occupancy_vs_ieta_HF;
   MonitorElement* occupancy_vs_ieta_HB1;
   MonitorElement* occupancy_vs_ieta_HB2;
   MonitorElement* occupancy_vs_ieta_HE1;
@@ -221,6 +243,9 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* occupancy_vs_ieta_HF2;
   MonitorElement* occupancy_vs_ieta_HO;
 
+  std::vector<MonitorElement*> occupancy_seqHB;
+  std::vector<MonitorElement*> occupancy_seqHE;
+  std::vector<MonitorElement*> occupancy_seqHF;
   MonitorElement* occupancy_seqHB1;
   MonitorElement* occupancy_seqHB2;
   MonitorElement* occupancy_seqHE1;
