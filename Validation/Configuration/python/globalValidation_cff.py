@@ -12,10 +12,8 @@ from Validation.EcalDigis.ecalDigisValidationSequence_cff import *
 from Validation.EcalRecHits.ecalRecHitsValidationSequence_cff import *
 from Validation.EcalClusters.ecalClustersValidationSequence_cff import *
 from Validation.HcalHits.SimHitsValidationSequence_cff import *
-from Validation.HcalDigis.hcalDigisValidationSequence_cff import *
 from Validation.HcalHits.HcalSimHitStudy_cfi import *
-from Validation.HcalRecHits.hcalRecHitsValidationSequence_cff import *
-from Validation.CaloTowers.calotowersValidationSequence_cff import *
+from Validation.HcalDigis.hcalDigisValidationSequence_cff import *
 from Validation.MuonHits.muonHitsValidation_cfi import *
 from Validation.MuonDTDigis.dtDigiValidation_cfi import *
 from Validation.MuonCSCDigis.cscDigiValidation_cfi import *
@@ -64,10 +62,8 @@ globalValidation = cms.Sequence(   trackerHitsValidation
                                  + ecalRecHitsValidationSequence 
                                  + ecalClustersValidationSequence
                                  + hcalSimHitsValidationSequence
-                                 + hcaldigisValidationSequence
                                  + hcalSimHitStudy
-                                 + hcalRecHitsValidationSequence
-                                 + calotowersValidationSequence
+                                 + hcaldigisValidationSequence
                                  + validSimHit+muondtdigianalyzer 
                                  + cscDigiValidation
                                  + validationMuonRPCDigis 
