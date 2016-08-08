@@ -194,15 +194,15 @@ HcalRecHitsAnalyzer::HcalRecHitsAnalyzer(edm::ParameterSet const& conf) {
       //The mean energy histos are drawn, but not the RMS or emean seq
       
       for (int depth = 1; depth <= maxDepthHB_; depth++) {
-	sprintf  (histo, "emean_vs_ieta_HB%d",depth );
+	sprintf  (histo, "emean_vs_ieta_HB_depth%d",depth );
 	emean_vs_ieta_HB.push_back( ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.) );
       }
       for (int depth = 1; depth <= maxDepthHE_; depth++) {
-	sprintf  (histo, "emean_vs_ieta_HB%d",depth );
+	sprintf  (histo, "emean_vs_ieta_HE_depth%d",depth );
 	emean_vs_ieta_HE.push_back( ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.) );
       }
       for (int depth = 1; depth <= maxDepthHF_; depth++) {
-	sprintf  (histo, "emean_vs_ieta_HF%d",depth );
+	sprintf  (histo, "emean_vs_ieta_HF_depth%d",depth );
 	emean_vs_ieta_HF.push_back( ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.) );
       }
       sprintf  (histo, "emean_vs_ieta_HB1" );
