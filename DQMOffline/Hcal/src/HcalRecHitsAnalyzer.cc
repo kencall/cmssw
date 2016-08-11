@@ -112,105 +112,105 @@ HcalRecHitsAnalyzer::HcalRecHitsAnalyzer(edm::ParameterSet const& conf) {
 	map_depth4 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
 	
 	for (int depth = 1; depth <= maxDepthHB_; depth++) {
-	  sprintf  (histo, "ZS_Nreco_HB_depth%d" ,depth);
+	  sprintf  (histo, "ZS_Nreco_HB%d" ,depth);
 	  ZS_nHB.push_back( ibooker.book1D(histo, histo, 2500, 0., 2500.) );
 	}
-	sprintf  (histo, "ZS_Nreco_HB1" );
-	ZS_nHB1 = ibooker.book1D(histo, histo, 2500, 0., 2500.);
-	sprintf  (histo, "ZS_Nreco_HB2" );
-	ZS_nHB2 = ibooker.book1D(histo, histo,  500, 0.,  500.);
+	//sprintf  (histo, "ZS_Nreco_HB1" );
+	//ZS_nHB1 = ibooker.book1D(histo, histo, 2500, 0., 2500.);
+	//sprintf  (histo, "ZS_Nreco_HB2" );
+	//ZS_nHB2 = ibooker.book1D(histo, histo,  500, 0.,  500.);
 
 	for (int depth = 1; depth <= maxDepthHE_; depth++) {
-	  sprintf  (histo, "ZS_Nreco_HE_depth%d" ,depth);
+	  sprintf  (histo, "ZS_Nreco_HE%d" ,depth);
 	  ZS_nHE.push_back( ibooker.book1D(histo, histo, 2000, 0., 2000.) );
 	}      
-	sprintf  (histo, "ZS_Nreco_HE1" );
-	ZS_nHE1 = ibooker.book1D(histo, histo, 2000, 0., 2000.);
-	sprintf  (histo, "ZS_Nreco_HE2" );
-	ZS_nHE2 = ibooker.book1D(histo, histo, 2000, 0., 2000.);
-	sprintf  (histo, "ZS_Nreco_HE3" );
-	ZS_nHE3 = ibooker.book1D(histo, histo,  500, 0.,  500.);
+	//sprintf  (histo, "ZS_Nreco_HE1" );
+	//ZS_nHE1 = ibooker.book1D(histo, histo, 2000, 0., 2000.);
+	//sprintf  (histo, "ZS_Nreco_HE2" );
+	//ZS_nHE2 = ibooker.book1D(histo, histo, 2000, 0., 2000.);
+	//sprintf  (histo, "ZS_Nreco_HE3" );
+	//ZS_nHE3 = ibooker.book1D(histo, histo,  500, 0.,  500.);
 
 	sprintf  (histo, "ZS_Nreco_HO" );
 	ZS_nHO  = ibooker.book1D(histo, histo, 2500, 0., 2500.);
 
 	for (int depth = 1; depth <= maxDepthHF_; depth++) {
-	  sprintf  (histo, "ZS_Nreco_HF_depth%d" ,depth);
+	  sprintf  (histo, "ZS_Nreco_HF%d" ,depth);
 	  ZS_nHF.push_back( ibooker.book1D(histo, histo, 1000, 0., 1000.) );
 	}      
 
-	sprintf  (histo, "ZS_Nreco_HF1" );
-	ZS_nHF1 = ibooker.book1D(histo, histo, 1000, 0., 1000.);
-	sprintf  (histo, "ZS_Nreco_HF2" );
-	ZS_nHF2 = ibooker.book1D(histo, histo, 1000, 0., 1000.);
+	//sprintf  (histo, "ZS_Nreco_HF1" );
+	//ZS_nHF1 = ibooker.book1D(histo, histo, 1000, 0., 1000.);
+	//sprintf  (histo, "ZS_Nreco_HF2" );
+	//ZS_nHF2 = ibooker.book1D(histo, histo, 1000, 0., 1000.);
 
 	for (int depth = 1; depth <= maxDepthHB_; depth++) {
-	  sprintf  (histo, "ZSmin_simple1D_HB_depth%d" ,depth);
+	  sprintf  (histo, "ZSmin_simple1D_HB%d" ,depth);
 	  ZS_HB.push_back( ibooker.book1D(histo, histo, 120, -2., 10.) );
 	}
       
-	sprintf  (histo, "ZSmin_simple1D_HB1" );
-	ZS_HB1 = ibooker.book1D(histo, histo,120, -2., 10.);
-	sprintf  (histo, "ZSmin_simple1D_HB2" );
-	ZS_HB2 = ibooker.book1D(histo, histo,120, -2., 10.);
+	//sprintf  (histo, "ZSmin_simple1D_HB1" );
+	//ZS_HB1 = ibooker.book1D(histo, histo,120, -2., 10.);
+	//sprintf  (histo, "ZSmin_simple1D_HB2" );
+	//ZS_HB2 = ibooker.book1D(histo, histo,120, -2., 10.);
 
 	for (int depth = 1; depth <= maxDepthHE_; depth++) {
-	  sprintf  (histo, "ZSmin_simple1D_HE_depth%d" ,depth);
+	  sprintf  (histo, "ZSmin_simple1D_HE%d" ,depth);
 	  ZS_HE.push_back( ibooker.book1D(histo, histo, 120, -2., 10.) );
 	}
 
-	sprintf  (histo, "ZSmin_simple1D_HE1" );
-	ZS_HE1 = ibooker.book1D(histo, histo,120, -2., 10.);
-	sprintf  (histo, "ZSmin_simple1D_HE2" );
-	ZS_HE2 = ibooker.book1D(histo, histo,120, -2., 10.);
-	sprintf  (histo, "ZSmin_simple1D_HE3" );
-	ZS_HE3 = ibooker.book1D(histo, histo,120, -2., 10.);
+	//sprintf  (histo, "ZSmin_simple1D_HE1" );
+	//ZS_HE1 = ibooker.book1D(histo, histo,120, -2., 10.);
+	//sprintf  (histo, "ZSmin_simple1D_HE2" );
+	//ZS_HE2 = ibooker.book1D(histo, histo,120, -2., 10.);
+	//sprintf  (histo, "ZSmin_simple1D_HE3" );
+	//ZS_HE3 = ibooker.book1D(histo, histo,120, -2., 10.);
 	sprintf  (histo, "ZSmin_simple1D_HO" );
 	ZS_HO = ibooker.book1D(histo, histo,120, -2., 10.);
 
 	for (int depth = 1; depth <= maxDepthHF_; depth++) {
-	  sprintf  (histo, "ZSmin_simple1D_HF_depth%d" ,depth);
+	  sprintf  (histo, "ZSmin_simple1D_HF%d" ,depth);
 	  ZS_HF.push_back( ibooker.book1D(histo, histo, 200, -10., 10.) );
 	}
 
-        sprintf  (histo, "ZSmin_simple1D_HF1" );
-	ZS_HF1 = ibooker.book1D(histo, histo,200, -10., 10.);
-	sprintf  (histo, "ZSmin_simple1D_HF2" );
-	ZS_HF2 = ibooker.book1D(histo, histo,200, -10., 10.);
+        //sprintf  (histo, "ZSmin_simple1D_HF1" );
+	//ZS_HF1 = ibooker.book1D(histo, histo,200, -10., 10.);
+	//sprintf  (histo, "ZSmin_simple1D_HF2" );
+	//ZS_HF2 = ibooker.book1D(histo, histo,200, -10., 10.);
 	
 	for (int depth = 1; depth <= maxDepthHB_; depth++) {
-	  sprintf  (histo, "ZSmin_sequential1D_HB_depth%d" ,depth);
+	  sprintf  (histo, "ZSmin_sequential1D_HB%d" ,depth);
 	  ZS_seqHB.push_back( ibooker.book1D(histo, histo, 2400, -1200., 1200.) );
 	}
 
-        sprintf  (histo, "ZSmin_sequential1D_HB1" );
-	ZS_seqHB1 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
-	sprintf  (histo, "ZSmin_sequential1D_HB2" );
-	ZS_seqHB2 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
+        //sprintf  (histo, "ZSmin_sequential1D_HB1" );
+	//ZS_seqHB1 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
+	//sprintf  (histo, "ZSmin_sequential1D_HB2" );
+	//ZS_seqHB2 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
 
 	for (int depth = 1; depth <= maxDepthHE_; depth++) {
-	  sprintf  (histo, "ZSmin_sequential1D_HE_depth%d" ,depth);
+	  sprintf  (histo, "ZSmin_sequential1D_HE%d" ,depth);
 	  ZS_seqHE.push_back( ibooker.book1D(histo, histo, 4400, -2200., 2200.) );
 	}
 
-	sprintf  (histo, "ZSmin_sequential1D_HE1" );
-	ZS_seqHE1 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
-	sprintf  (histo, "ZSmin_sequential1D_HE2" );
-	ZS_seqHE2 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
-	sprintf  (histo, "ZSmin_sequential1D_HE3" );
-	ZS_seqHE3 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
+	//sprintf  (histo, "ZSmin_sequential1D_HE1" );
+	//ZS_seqHE1 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
+	//sprintf  (histo, "ZSmin_sequential1D_HE2" );
+	//ZS_seqHE2 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
+	//sprintf  (histo, "ZSmin_sequential1D_HE3" );
+	//ZS_seqHE3 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
 	sprintf  (histo, "ZSmin_sequential1D_HO" );
 	ZS_seqHO  = ibooker.book1D(histo, histo,2400, -1200., 1200.);
 
 	for (int depth = 1; depth <= maxDepthHF_; depth++) {
-	  sprintf  (histo, "ZSmin_sequential1D_HF_depth%d" ,depth);
+	  sprintf  (histo, "ZSmin_sequential1D_HF%d" ,depth);
 	  ZS_seqHF.push_back( ibooker.book1D(histo, histo, 6000, -3000., 3000.) );
 	}
 
-	sprintf  (histo, "ZSmin_sequential1D_HF1" );
-	ZS_seqHF1 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
-	sprintf  (histo, "ZSmin_sequential1D_HF2" );
-	ZS_seqHF2 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
+	//sprintf  (histo, "ZSmin_sequential1D_HF1" );
+	//ZS_seqHF1 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
+	//sprintf  (histo, "ZSmin_sequential1D_HF2" );
+	//ZS_seqHF2 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
       }
     }
 
@@ -241,247 +241,247 @@ HcalRecHitsAnalyzer::HcalRecHitsAnalyzer(edm::ParameterSet const& conf) {
       //The mean energy histos are drawn, but not the RMS or emean seq
       
       for (int depth = 1; depth <= maxDepthHB_; depth++) {
-	sprintf  (histo, "emean_vs_ieta_HB_depth%d",depth );
+	sprintf  (histo, "emean_vs_ieta_HB%d",depth );
 	emean_vs_ieta_HB.push_back( ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.) );
       }
       for (int depth = 1; depth <= maxDepthHE_; depth++) {
-	sprintf  (histo, "emean_vs_ieta_HE_depth%d",depth );
+	sprintf  (histo, "emean_vs_ieta_HE%d",depth );
 	emean_vs_ieta_HE.push_back( ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.) );
       }
       for (int depth = 1; depth <= maxDepthHF_; depth++) {
-	sprintf  (histo, "emean_vs_ieta_HF_depth%d",depth );
+	sprintf  (histo, "emean_vs_ieta_HF%d",depth );
 	emean_vs_ieta_HF.push_back( ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.) );
       }
-      sprintf  (histo, "emean_vs_ieta_HB1" );
-      emean_vs_ieta_HB1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.);
-      sprintf  (histo, "emean_vs_ieta_HB2" );
-      emean_vs_ieta_HB2 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.);
-      sprintf  (histo, "emean_vs_ieta_HE1" );
-      emean_vs_ieta_HE1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10. ,2000.);
-      sprintf  (histo, "emean_vs_ieta_HE2" );
-      emean_vs_ieta_HE2 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.);
-      sprintf  (histo, "emean_vs_ieta_HE3" );
-      emean_vs_ieta_HE3 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000. );
+      //sprintf  (histo, "emean_vs_ieta_HB1" );
+      //emean_vs_ieta_HB1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.);
+      //sprintf  (histo, "emean_vs_ieta_HB2" );
+      //emean_vs_ieta_HB2 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.);
+      //sprintf  (histo, "emean_vs_ieta_HE1" );
+      //emean_vs_ieta_HE1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10. ,2000.);
+      //sprintf  (histo, "emean_vs_ieta_HE2" );
+      //emean_vs_ieta_HE2 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000.);
+      //sprintf  (histo, "emean_vs_ieta_HE3" );
+      //emean_vs_ieta_HE3 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000. );
       sprintf  (histo, "emean_vs_ieta_HO" );
       emean_vs_ieta_HO = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000. );
-      sprintf  (histo, "emean_vs_ieta_HF1" );
-      emean_vs_ieta_HF1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000. );
-      sprintf  (histo, "emean_vs_ieta_HF2" );
-      emean_vs_ieta_HF2 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000. );
+      //sprintf  (histo, "emean_vs_ieta_HF1" );
+      //emean_vs_ieta_HF1 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000. );
+      //sprintf  (histo, "emean_vs_ieta_HF2" );
+      //emean_vs_ieta_HF2 = ibooker.bookProfile(histo, histo, 82, -41., 41., 2010, -10., 2000. );
 
       if (useAllHistos_){
         for (int depth = 1; depth <= maxDepthHB_; depth++) {
-           sprintf  (histo, "RMS_vs_ieta_HB_depth%d",depth );
+           sprintf  (histo, "RMS_vs_ieta_HB%d",depth );
 	   RMS_vs_ieta_HB.push_back( ibooker.book1D(histo, histo, 82, -41., 41.) );
         }
 
-	sprintf  (histo, "RMS_vs_ieta_HB1" );
-	RMS_vs_ieta_HB1 = ibooker.book1D(histo, histo, 82, -41., 41.);
-	sprintf  (histo, "RMS_vs_ieta_HB2" );
-	RMS_vs_ieta_HB2 = ibooker.book1D(histo, histo, 82, -41., 41.);
+	//sprintf  (histo, "RMS_vs_ieta_HB1" );
+	//RMS_vs_ieta_HB1 = ibooker.book1D(histo, histo, 82, -41., 41.);
+	//sprintf  (histo, "RMS_vs_ieta_HB2" );
+	//RMS_vs_ieta_HB2 = ibooker.book1D(histo, histo, 82, -41., 41.);
 
         for (int depth = 1; depth <= maxDepthHE_; depth++) {
-           sprintf  (histo, "RMS_vs_ieta_HE_depth%d",depth );
+           sprintf  (histo, "RMS_vs_ieta_HE%d",depth );
 	   RMS_vs_ieta_HE.push_back( ibooker.book1D(histo, histo, 82, -41., 41.) );
         }
 
-	sprintf  (histo, "RMS_vs_ieta_HE1" );
-	RMS_vs_ieta_HE1 = ibooker.book1D(histo, histo, 82, -41., 41.);
-	sprintf  (histo, "RMS_vs_ieta_HE2" );
-	RMS_vs_ieta_HE2 = ibooker.book1D(histo, histo, 82, -41., 41.);
-	sprintf  (histo, "RMS_vs_ieta_HE3" );
-	RMS_vs_ieta_HE3 = ibooker.book1D(histo, histo, 82, -41., 41.);
+	//sprintf  (histo, "RMS_vs_ieta_HE1" );
+	//RMS_vs_ieta_HE1 = ibooker.book1D(histo, histo, 82, -41., 41.);
+	//sprintf  (histo, "RMS_vs_ieta_HE2" );
+	//RMS_vs_ieta_HE2 = ibooker.book1D(histo, histo, 82, -41., 41.);
+	//sprintf  (histo, "RMS_vs_ieta_HE3" );
+	//RMS_vs_ieta_HE3 = ibooker.book1D(histo, histo, 82, -41., 41.);
 	sprintf  (histo, "RMS_vs_ieta_HO" );
 	RMS_vs_ieta_HO = ibooker.book1D(histo, histo, 82, -41., 41.);
 
         for (int depth = 1; depth <= maxDepthHF_; depth++) {
-           sprintf  (histo, "RMS_vs_ieta_HF_depth%d",depth );
+           sprintf  (histo, "RMS_vs_ieta_HF%d",depth );
 	   RMS_vs_ieta_HF.push_back( ibooker.book1D(histo, histo, 82, -41., 41.) );
         }
 
-	sprintf  (histo, "RMS_vs_ieta_HF1" );
-	RMS_vs_ieta_HF1 = ibooker.book1D(histo, histo, 82, -41., 41.);
-	sprintf  (histo, "RMS_vs_ieta_HF2" );
-	RMS_vs_ieta_HF2 = ibooker.book1D(histo, histo, 82, -41., 41.);
+	//sprintf  (histo, "RMS_vs_ieta_HF1" );
+	//RMS_vs_ieta_HF1 = ibooker.book1D(histo, histo, 82, -41., 41.);
+	//sprintf  (histo, "RMS_vs_ieta_HF2" );
+	//RMS_vs_ieta_HF2 = ibooker.book1D(histo, histo, 82, -41., 41.);
 	
 	// Sequential emean and RMS
         for (int depth = 1; depth <= maxDepthHB_; depth++) {
-           sprintf  (histo, "emean_seq_HB_depth%d",depth );
+           sprintf  (histo, "emean_seq_HB%d",depth );
 	   emean_seq_HB.push_back( ibooker.bookProfile(histo, histo, 2400, -1200., 1200., 2010, -10., 2000.) );
         }
 
-	sprintf  (histo, "emean_seq_HB1" );
-	emean_seqHB1 = ibooker.bookProfile(histo, histo, 2400, -1200., 1200.,  2010, -10., 2000. );
-	sprintf  (histo, "emean_seq_HB2" );
-	emean_seqHB2 = ibooker.bookProfile(histo, histo, 2400, -1200., 1200.,  2010, -10., 2000. );
+	//sprintf  (histo, "emean_seq_HB1" );
+	//emean_seqHB1 = ibooker.bookProfile(histo, histo, 2400, -1200., 1200.,  2010, -10., 2000. );
+	//sprintf  (histo, "emean_seq_HB2" );
+	//emean_seqHB2 = ibooker.bookProfile(histo, histo, 2400, -1200., 1200.,  2010, -10., 2000. );
 
         for (int depth = 1; depth <= maxDepthHE_; depth++) {
-           sprintf  (histo, "emean_seq_HE_depth%d",depth );
+           sprintf  (histo, "emean_seq_HE%d",depth );
 	   emean_seq_HE.push_back( ibooker.bookProfile(histo, histo, 4400, -2200., 2200., 2010, -10., 2000.) );
         }
 
-	sprintf  (histo, "emean_seq_HE1" );
-	emean_seqHE1 = ibooker.bookProfile(histo, histo, 4400, -2200., 2200.,  2010, -10., 2000. );
-	sprintf  (histo, "emean_seq_HE2" );
-	emean_seqHE2 = ibooker.bookProfile(histo, histo, 4400, -2200., 2200.,  2010, -10., 2000. );
-	sprintf  (histo, "emean_seq_HE3" );
-	emean_seqHE3 = ibooker.bookProfile(histo, histo, 4400, -2200., 2200.,  2010, -10., 2000. );
+	//sprintf  (histo, "emean_seq_HE1" );
+	//emean_seqHE1 = ibooker.bookProfile(histo, histo, 4400, -2200., 2200.,  2010, -10., 2000. );
+	//sprintf  (histo, "emean_seq_HE2" );
+	//emean_seqHE2 = ibooker.bookProfile(histo, histo, 4400, -2200., 2200.,  2010, -10., 2000. );
+	//sprintf  (histo, "emean_seq_HE3" );
+	//emean_seqHE3 = ibooker.bookProfile(histo, histo, 4400, -2200., 2200.,  2010, -10., 2000. );
 	sprintf  (histo, "emean_seq_HO" );
 	emean_seqHO = ibooker.bookProfile(histo, histo,  2400, -1200., 1200.,  2010, -10., 2000. );
 
         for (int depth = 1; depth <= maxDepthHF_; depth++) {
-           sprintf  (histo, "emean_seq_HF_depth%d",depth );
+           sprintf  (histo, "emean_seq_HF%d",depth );
 	   emean_seq_HF.push_back( ibooker.bookProfile(histo, histo, 6000, -3000., 3000., 2010, -10., 2000.) );
         }
 
-	sprintf  (histo, "emean_seq_HF1" );
-	emean_seqHF1 = ibooker.bookProfile(histo, histo, 6000, -3000., 3000.,  2010, -10., 2000. );
-	sprintf  (histo, "emean_seq_HF2" );
-	emean_seqHF2 = ibooker.bookProfile(histo, histo, 6000, -3000., 3000.,  2010, -10., 2000. );
+	//sprintf  (histo, "emean_seq_HF1" );
+	//emean_seqHF1 = ibooker.bookProfile(histo, histo, 6000, -3000., 3000.,  2010, -10., 2000. );
+	//sprintf  (histo, "emean_seq_HF2" );
+	//emean_seqHF2 = ibooker.bookProfile(histo, histo, 6000, -3000., 3000.,  2010, -10., 2000. );
 	
         for (int depth = 1; depth <= maxDepthHB_; depth++) {
-           sprintf  (histo, "RMS_seq_HB_depth%d",depth );
+           sprintf  (histo, "RMS_seq_HB%d",depth );
 	   RMS_seq_HB.push_back( ibooker.book1D(histo, histo, 2400, -1200., 1200.) );
         }
 
-	sprintf  (histo, "RMS_seq_HB1" );
-	RMS_seq_HB1 = ibooker.book1D(histo, histo, 2400, -1200., 1200.);
-	sprintf  (histo, "RMS_seq_HB2" );
-	RMS_seq_HB2 = ibooker.book1D(histo, histo, 2400, -1200., 1200.);
+	//sprintf  (histo, "RMS_seq_HB1" );
+	//RMS_seq_HB1 = ibooker.book1D(histo, histo, 2400, -1200., 1200.);
+	//sprintf  (histo, "RMS_seq_HB2" );
+	//RMS_seq_HB2 = ibooker.book1D(histo, histo, 2400, -1200., 1200.);
 
         for (int depth = 1; depth <= maxDepthHE_; depth++) {
-           sprintf  (histo, "RMS_seq_HE_depth%d",depth );
+           sprintf  (histo, "RMS_seq_HE%d",depth );
 	   RMS_seq_HE.push_back( ibooker.book1D(histo, histo, 4400, -2200., 2200.) );
         }
 
-	sprintf  (histo, "RMS_seq_HE1" );
-	RMS_seq_HE1 = ibooker.book1D(histo, histo, 4400, -2200., 2200.);
-	sprintf  (histo, "RMS_seq_HE2" );
-	RMS_seq_HE2 = ibooker.book1D(histo, histo, 4400, -2200., 2200.);
-	sprintf  (histo, "RMS_seq_HE3" );
-	RMS_seq_HE3 = ibooker.book1D(histo, histo, 4400, -2200., 2200.);
+	//sprintf  (histo, "RMS_seq_HE1" );
+	//RMS_seq_HE1 = ibooker.book1D(histo, histo, 4400, -2200., 2200.);
+	//sprintf  (histo, "RMS_seq_HE2" );
+	//RMS_seq_HE2 = ibooker.book1D(histo, histo, 4400, -2200., 2200.);
+	//sprintf  (histo, "RMS_seq_HE3" );
+	//RMS_seq_HE3 = ibooker.book1D(histo, histo, 4400, -2200., 2200.);
 	sprintf  (histo, "RMS_seq_HO" );
 	RMS_seq_HO = ibooker.book1D(histo, histo, 2400, -1200., 1200.);
 
         for (int depth = 1; depth <= maxDepthHF_; depth++) {
-           sprintf  (histo, "RMS_seq_HF_depth%d",depth );
+           sprintf  (histo, "RMS_seq_HF%d",depth );
 	   RMS_seq_HF.push_back( ibooker.book1D(histo, histo, 6000, -3000., 3000.) );
         }
 
-	sprintf  (histo, "RMS_seq_HF1" );
-	RMS_seq_HF1 = ibooker.book1D(histo, histo, 6000, -3000., 3000.);
-	sprintf  (histo, "RMS_seq_HF2" );
-	RMS_seq_HF2 = ibooker.book1D(histo, histo, 6000, -3000., 3000.);
+	//sprintf  (histo, "RMS_seq_HF1" );
+	//RMS_seq_HF1 = ibooker.book1D(histo, histo, 6000, -3000., 3000.);
+	//sprintf  (histo, "RMS_seq_HF2" );
+	//RMS_seq_HF2 = ibooker.book1D(histo, histo, 6000, -3000., 3000.);
       }
       // Occupancy
       //The only occupancy histos drawn are occupancy vs. ieta
       //but the maps are needed because this is where the latter are filled from
 
       for (int depth = 1; depth <= maxDepthHB_; depth++) {
-         sprintf  (histo, "occupancy_map_HB_depth%d",depth );
+         sprintf  (histo, "occupancy_map_HB%d",depth );
          occupancy_map_HB.push_back( ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.) );
       }
 
-      sprintf  (histo, "occupancy_map_HB1" );
-      occupancy_map_HB1 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
-      sprintf  (histo, "occupancy_map_HB2" );
-      occupancy_map_HB2 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
+      //sprintf  (histo, "occupancy_map_HB1" );
+      //occupancy_map_HB1 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
+      //sprintf  (histo, "occupancy_map_HB2" );
+      //occupancy_map_HB2 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
 
       for (int depth = 1; depth <= maxDepthHE_; depth++) {
-         sprintf  (histo, "occupancy_map_HE_depth%d",depth );
+         sprintf  (histo, "occupancy_map_HE%d",depth );
          occupancy_map_HE.push_back( ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.) );
       }
 
-      sprintf  (histo, "occupancy_map_HE1" );
-      occupancy_map_HE1 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
-      sprintf  (histo, "occupancy_map_HE2" );
-      occupancy_map_HE2 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);      
-      sprintf  (histo, "occupancy_map_HE3" );
-      occupancy_map_HE3 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
+      //sprintf  (histo, "occupancy_map_HE1" );
+      //occupancy_map_HE1 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
+      //sprintf  (histo, "occupancy_map_HE2" );
+      //occupancy_map_HE2 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);      
+      //sprintf  (histo, "occupancy_map_HE3" );
+      //occupancy_map_HE3 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
       sprintf  (histo, "occupancy_map_HO" );
       occupancy_map_HO = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);      
 
       for (int depth = 1; depth <= maxDepthHF_; depth++) {
-         sprintf  (histo, "occupancy_map_HF_depth%d",depth );
+         sprintf  (histo, "occupancy_map_HF%d",depth );
          occupancy_map_HF.push_back( ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.) );
       }
 
-      sprintf  (histo, "occupancy_map_HF1" );
-      occupancy_map_HF1 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
-      sprintf  (histo, "occupancy_map_HF2" );
-      occupancy_map_HF2 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
+      //sprintf  (histo, "occupancy_map_HF1" );
+      //occupancy_map_HF1 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
+      //sprintf  (histo, "occupancy_map_HF2" );
+      //occupancy_map_HF2 = ibooker.book2D(histo, histo, 82, -41., 41., 72, 0., 72.);
       
       //These are drawn
 
       for (int depth = 1; depth <= maxDepthHB_; depth++) {
-         sprintf  (histo, "occupancy_vs_ieta_HB_depth%d",depth );
+         sprintf  (histo, "occupancy_vs_ieta_HB%d",depth );
          occupancy_vs_ieta_HB.push_back( ibooker.book1D(histo, histo, 82, -41., 41.) );
       }
 
-      sprintf  (histo, "occupancy_vs_ieta_HB1" );
-      occupancy_vs_ieta_HB1 = ibooker.book1D(histo, histo, 82, -41., 41.);
-      sprintf  (histo, "occupancy_vs_ieta_HB2" );
-      occupancy_vs_ieta_HB2 = ibooker.book1D(histo, histo, 82, -41., 41.);
+      //sprintf  (histo, "occupancy_vs_ieta_HB1" );
+      //occupancy_vs_ieta_HB1 = ibooker.book1D(histo, histo, 82, -41., 41.);
+      //sprintf  (histo, "occupancy_vs_ieta_HB2" );
+      //occupancy_vs_ieta_HB2 = ibooker.book1D(histo, histo, 82, -41., 41.);
 
       for (int depth = 1; depth <= maxDepthHE_; depth++) {
-         sprintf  (histo, "occupancy_vs_ieta_HE_depth%d",depth );
+         sprintf  (histo, "occupancy_vs_ieta_HE%d",depth );
          occupancy_vs_ieta_HE.push_back( ibooker.book1D(histo, histo, 82, -41., 41.) );
       }
 
-      sprintf  (histo, "occupancy_vs_ieta_HE1" );
-      occupancy_vs_ieta_HE1 = ibooker.book1D(histo, histo, 82, -41., 41.);
-      sprintf  (histo, "occupancy_vs_ieta_HE2" );
-      occupancy_vs_ieta_HE2 = ibooker.book1D(histo, histo, 82, -41., 41.);
-      sprintf  (histo, "occupancy_vs_ieta_HE3" );
-      occupancy_vs_ieta_HE3 = ibooker.book1D(histo, histo, 82, -41., 41.);
+      //sprintf  (histo, "occupancy_vs_ieta_HE1" );
+      //occupancy_vs_ieta_HE1 = ibooker.book1D(histo, histo, 82, -41., 41.);
+      //sprintf  (histo, "occupancy_vs_ieta_HE2" );
+      //occupancy_vs_ieta_HE2 = ibooker.book1D(histo, histo, 82, -41., 41.);
+      //sprintf  (histo, "occupancy_vs_ieta_HE3" );
+      //occupancy_vs_ieta_HE3 = ibooker.book1D(histo, histo, 82, -41., 41.);
       sprintf  (histo, "occupancy_vs_ieta_HO" );
       occupancy_vs_ieta_HO = ibooker.book1D(histo, histo, 82, -41., 41.);
 
       for (int depth = 1; depth <= maxDepthHF_; depth++) {
-         sprintf  (histo, "occupancy_vs_ieta_HF_depth%d",depth );
+         sprintf  (histo, "occupancy_vs_ieta_HF%d",depth );
          occupancy_vs_ieta_HF.push_back( ibooker.book1D(histo, histo, 82, -41., 41.) );
       }
 
-      sprintf  (histo, "occupancy_vs_ieta_HF1" );
-      occupancy_vs_ieta_HF1 = ibooker.book1D(histo, histo, 82, -41., 41.);
-      sprintf  (histo, "occupancy_vs_ieta_HF2" );
-      occupancy_vs_ieta_HF2 = ibooker.book1D(histo, histo, 82, -41., 41.);
+      //sprintf  (histo, "occupancy_vs_ieta_HF1" );
+      //occupancy_vs_ieta_HF1 = ibooker.book1D(histo, histo, 82, -41., 41.);
+      //sprintf  (histo, "occupancy_vs_ieta_HF2" );
+      //occupancy_vs_ieta_HF2 = ibooker.book1D(histo, histo, 82, -41., 41.);
       
       //These are not
       if (useAllHistos_){
         for (int depth = 1; depth <= maxDepthHB_; depth++) {
-           sprintf  (histo, "occ_sequential1D_HB_depth%d",depth );
+           sprintf  (histo, "occ_sequential1D_HB%d",depth );
            occupancy_seqHB.push_back( ibooker.book1D(histo, histo, 2400, -1200., 1200.) );
         }
 
-	sprintf  (histo, "occ_sequential1D_HB1" );
-	occupancy_seqHB1 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
-	sprintf  (histo, "occ_sequential1D_HB2" );
-	occupancy_seqHB2 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
+	//sprintf  (histo, "occ_sequential1D_HB1" );
+	//occupancy_seqHB1 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
+	//sprintf  (histo, "occ_sequential1D_HB2" );
+	//occupancy_seqHB2 = ibooker.book1D(histo, histo,2400, -1200., 1200.);
 
         for (int depth = 1; depth <= maxDepthHE_; depth++) {
-           sprintf  (histo, "occ_sequential1D_HE_depth%d",depth );
+           sprintf  (histo, "occ_sequential1D_HE%d",depth );
            occupancy_seqHE.push_back( ibooker.book1D(histo, histo, 2400, -1200., 1200.) );
         }
 
-	sprintf  (histo, "occ_sequential1D_HE1" );
-	occupancy_seqHE1 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
-	sprintf  (histo, "occ_sequential1D_HE2" );
-	occupancy_seqHE2 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
-	sprintf  (histo, "occ_sequential1D_HE3" );
-	occupancy_seqHE3 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
+	//sprintf  (histo, "occ_sequential1D_HE1" );
+	//occupancy_seqHE1 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
+	//sprintf  (histo, "occ_sequential1D_HE2" );
+	//occupancy_seqHE2 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
+	//sprintf  (histo, "occ_sequential1D_HE3" );
+	//occupancy_seqHE3 = ibooker.book1D(histo, histo,4400, -2200., 2200.);
 	sprintf  (histo, "occ_sequential1D_HO" );
 	occupancy_seqHO  = ibooker.book1D(histo, histo,2400, -1200., 1200.);
 
         for (int depth = 1; depth <= maxDepthHF_; depth++) {
-           sprintf  (histo, "occ_sequential1D_HF_depth%d",depth );
+           sprintf  (histo, "occ_sequential1D_HF%d",depth );
            occupancy_seqHF.push_back( ibooker.book1D(histo, histo, 2400, -1200., 1200.) );
         }
 
-	sprintf  (histo, "occ_sequential1D_HF1" );
-	occupancy_seqHF1 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
-	sprintf  (histo, "occ_sequential1D_HF2" );
-	occupancy_seqHF2 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
+	//sprintf  (histo, "occ_sequential1D_HF1" );
+	//occupancy_seqHF1 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
+	//sprintf  (histo, "occ_sequential1D_HF2" );
+	//occupancy_seqHF2 = ibooker.book1D(histo, histo,6000, -3000., 3000.);
       }
 
       //All status word histos except HF67 are drawn
@@ -1150,14 +1150,14 @@ void HcalRecHitsAnalyzer::analyze(edm::Event const& ev, edm::EventSetup const& c
   } 
  
   if( subdet_ == 6 && useAllHistos_) {               // ZS plots; not drawn
-    ZS_nHB1->Fill(double(nhb1));  
-    ZS_nHB2->Fill(double(nhb2));  
-    ZS_nHE1->Fill(double(nhe1));  
-    ZS_nHE2->Fill(double(nhe2));  
-    ZS_nHE3->Fill(double(nhe3));  
-    ZS_nHO ->Fill(double(nho));  
-    ZS_nHF1->Fill(double(nhf1));  
-    ZS_nHF2->Fill(double(nhf2));  
+    //ZS_nHB1->Fill(double(nhb1));  
+    //ZS_nHB2->Fill(double(nhb2));  
+    //ZS_nHE1->Fill(double(nhe1));  
+    //ZS_nHE2->Fill(double(nhe2));  
+    //ZS_nHE3->Fill(double(nhe3));  
+    //ZS_nHO ->Fill(double(nho));  
+    //ZS_nHF1->Fill(double(nhf1));  
+    //ZS_nHF2->Fill(double(nhf2));  
     for (int depth = 1; depth <= maxDepthHB_; depth++) ZS_nHB[depth-1]->Fill(double(nhb_v[depth]));
     for (int depth = 1; depth <= maxDepthHE_; depth++) ZS_nHE[depth-1]->Fill(double(nhe_v[depth]));
     for (int depth = 1; depth <= maxDepthHF_; depth++) ZS_nHF[depth-1]->Fill(double(nhf_v[depth]));

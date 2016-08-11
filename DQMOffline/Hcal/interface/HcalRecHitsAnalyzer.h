@@ -165,7 +165,7 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
 
   MonitorElement* map_ecal;
 
-  srd::vector<MonitorElement*> emap;
+  std::vector<MonitorElement*> emap;
   MonitorElement* emap_depth1;
   MonitorElement* emap_depth2;
   MonitorElement* emap_depth3;
