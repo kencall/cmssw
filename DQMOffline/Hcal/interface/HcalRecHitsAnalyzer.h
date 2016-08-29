@@ -110,10 +110,16 @@ class HcalRecHitsAnalyzer : public DQMEDAnalyzer {
   MonitorElement* sevLvl_HO; 
 
   // RecHits counters
+/*
   MonitorElement* Nhb;
   MonitorElement* Nhe;
   MonitorElement* Nho;
   MonitorElement* Nhf;
+*/
+  std::vector<MonitorElement*> Nhb;
+  std::vector<MonitorElement*> Nhe;
+  std::vector<MonitorElement*> Nho;
+  std::vector<MonitorElement*> Nhf;
 
   // ZS-specific
 
