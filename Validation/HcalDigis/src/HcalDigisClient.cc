@@ -111,8 +111,6 @@ int HcalDigisClient::HcalDigisEndjob(const std::vector<MonitorElement*> &hcalMEs
 
                     depthID.push_back(hcalMEs[ih]->getName().substr(position, length));
 
-			std::cout << "Determined depth: " << hcalMEs[ih]->getName().substr(position, length) << std::endl;
-
                     continue;
          }
 
@@ -129,7 +127,6 @@ int HcalDigisClient::HcalDigisEndjob(const std::vector<MonitorElement*> &hcalMEs
 
     }
 
-    std::cout << "Finished looking at list of histograms" << std::endl;
 
 /*
     if (nevtot                   == 0 ||
@@ -152,11 +149,9 @@ int HcalDigisClient::HcalDigisEndjob(const std::vector<MonitorElement*> &hcalMEs
       return 0;
     }
 
-    std::cout << "Passed Checks of histo id" << std::endl;    
 
     int ev = nevtot->getEntries();
 
-    std::cout << "Found number of events" << std::endl;
 
     if(ev <= 0) {
       edm::LogError("HcalDigisClient") << "normalization factor <= 0!"; 
@@ -167,7 +162,6 @@ int HcalDigisClient::HcalDigisEndjob(const std::vector<MonitorElement*> &hcalMEs
 
     int depths = ieta_iphi_occupancy_maps.size();
 
-    std::cout << "There are " << depths << " depth(s)." << std::endl;
 
     std::vector<float> sumphi;
     for(int depth = 1; depth <= depths; depth++) sumphi.push_back(0.);
@@ -175,30 +169,22 @@ int HcalDigisClient::HcalDigisEndjob(const std::vector<MonitorElement*> &hcalMEs
     float phi_factor;
     float cnorm;
 
-    std::cout << "Preparing to look at depths" << std::endl;
 
     for(int depth = 1; depth <= depths; depth++){
-       std::cout << "Depth id: " << depth << std::endl;
        int nx = ieta_iphi_occupancy_maps[depth-1]->getNbinsX();
        int ny = ieta_iphi_occupancy_maps[depth-1]->getNbinsY();
 
-       std::cout << "nx and ny found for depth: " << depth << std::endl;
     
        for (int i = 1; i <= nx; i++) {
            for (int j = 1; j <= ny; j++) {
 
                // occupancies
-	       //std::cout << "Accessing Bin Content" << std::endl;
                cnorm = ieta_iphi_occupancy_maps[depth-1]->getBinContent(i, j) / fev;
-	       //std::cout << "Bin content accessed, preparing to set content." << std::endl;
                ieta_iphi_occupancy_maps[depth-1]->setBinContent(i, j, cnorm);
-	       //std::cout << "Set bin content" << std::endl;
 
            } //for loop over NbinsYU
        } //for loop over NbinsX	    
-	std::cout << "Finished loop over depth id " << depth << std::endl;
     } //for loop over the occupancy maps
-	std::cout << "Finished looping over occupancy maps" << std::endl;
 
     for (int i = 1; i <= 82; i++) {
 
@@ -220,7 +206,6 @@ int HcalDigisClient::HcalDigisEndjob(const std::vector<MonitorElement*> &hcalMEs
         sumphi_3 = 0.;
         sumphi_4 = 0.;
 */
-	std::cout << "Starting sum over phis" << std::endl;
 
         for (int iphi = 1; iphi <= 72; iphi++) {
             for(int depth = 1; depth <= depths; depth++){
@@ -241,7 +226,7 @@ int HcalDigisClient::HcalDigisEndjob(const std::vector<MonitorElement*> &hcalMEs
         for(int depth = 1; depth <= depths; depth++){
            cnorm = sumphi[depth-1] / phi_factor;
            strtmp = "HcalDigiTask_occupancy_vs_ieta_depth" + depthID[depth-1] + "_" + subdet_;
-	   cout << "Histogram name: " << strtmp << std::endl;
+	   //cout << "Histogram name: " << strtmp << std::endl;
            fill1D(strtmp, deta, cnorm);
         }
 /*
