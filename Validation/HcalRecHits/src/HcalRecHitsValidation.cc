@@ -294,17 +294,9 @@ void HcalRecHitsValidation::analyze(edm::Event const& ev, edm::EventSetup const&
     double clusPhi = 999.; 
     double clusEn  = 0.;
     
-    double HcalCone_d1 = 0.;
-    double HcalCone_d2 = 0.;
-    double HcalCone_d3 = 0.;
-    double HcalCone_d4 = 0.;
     double HcalCone    = 0.;
 
     int ietaMax   =  9999;
-    double enMax1 = -9999.;
-    double enMax2 = -9999.;
-    double enMax3 = -9999.;
-    double enMax4 = -9999.;
     //    double enMax  = -9999.;
     double etaMax =  9999.;
 
@@ -350,35 +342,7 @@ void HcalRecHitsValidation::analyze(edm::Event const& ev, edm::EventSetup const&
 	eHcalCone += en;
 	nrechitsCone++;
 
-	// search for most energetic cell at the given depth in the cone
-        if(depth == 1) {
-	  HcalCone_d1 += en;
-	  if(enMax1 < en) {
-	    enMax1   = en;
-	  }
-	}
-        if(depth == 2) {
-	  HcalCone_d2 += en;
-	  if(enMax2 < en) {
-	    enMax2   = en;
-	  }
-	}
-        if(depth == 3) {
-	  HcalCone_d3 += en;
-	  if(enMax3 < en) {
-	    enMax3   = en;
-	  }
-	}
-        if(depth == 4) {
-	  HcalCone_d4 += en;
-	  if(enMax4 < en) {
-	    enMax4   = en;
-	  }
-	}
-
-	if(depth != 4) {
-	  HcalCone += en;
-	}
+        HcalCone += en;
 
 
 	// regardless of the depths (but excluding HO), just hottest cell
