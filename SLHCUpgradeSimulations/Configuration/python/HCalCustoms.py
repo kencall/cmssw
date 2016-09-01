@@ -21,33 +21,80 @@ def customise_HcalPhase0(process):
 
     return process
 
-def customise_HcalPhase1(process):
-    #common stuff
-    process.load("CalibCalorimetry/HcalPlugins/Hcal_Conditions_forGlobalTag_cff")
-    process.es_hardcode.toGet = cms.untracked.vstring(
-                'GainWidths',
-                'MCParams',
-                'RecoParams',
-                'RespCorrs',
-                'QIEData',
-                'QIETypes',
-                'Gains',
-                'Pedestals',
-                'PedestalWidths',
-                'ChannelQuality',
-                'ZSThresholds',
-                'TimeCorrs',
-                'LUTCorrs',
-                'LutMetadata',
-                'L1TriggerObjects',
-                'PFCorrs',
-                'ElectronicsMap',
-                'CholeskyMatrices',
-                'CovarianceMatrices'
-                )
+#intermediate customization (HF 2016 upgrades)
+def customise_Hcal2016(process):
+    process=load_HcalHardcode(process)
+    
+    #for now, use HE run1 conditions - SiPM/QIE11 not ready
+    process.es_hardcode.testHFQIE10 = cms.bool(True)
+    
+    # to get reco to run
+    if hasattr(process,'reconstruction_step'):
+        process.hbheprereco.setNoiseFlags = cms.bool(False)
+    
+    return process
+    
+#intermediate customization (HCAL 2017, HE and HF upgrades - no SiPMs or QIE11)
+def customise_Hcal2017(process):
+    process=load_HcalHardcode(process)
+    
+    #for now, use HE run1 conditions - SiPM/QIE11 not ready
+    process.es_hardcode.useHFUpgrade = cms.bool(True)
+    
+    # to get reco to run
+    if hasattr(process,'DigiToRaw'):
+        process=customise_DigiToRaw(process)
+    if hasattr(process,'RawToDigi'):
+        process=customise_RawToDigi(process)
+    if hasattr(process,'reconstruction_step'):
+        process.hbheprereco.digiLabel = cms.InputTag("simHcalDigis")
+        process.hbheprereco.setNoiseFlags = cms.bool(False)
+        # process.hbheprereco.puCorrMethod = cms.int32(0)
+        process.horeco.digiLabel = cms.InputTag("simHcalDigis")
+        process.zdcreco.digiLabel = cms.InputTag("simHcalUnsuppressedDigis")
+        process.zdcreco.digiLabelhcal = cms.InputTag("simHcalUnsuppressedDigis")
+        process.hcalnoise.digiCollName = cms.string('simHcalDigis')
+        process.load("RecoLocalCalo.HcalRecProducers.hfprereco_cfi")
+        process.hfprereco.digiLabel = cms.InputTag("simHcalDigis", "HFQIE10DigiCollection")
+        process.localreco += process.hfprereco
+        from RecoLocalCalo.HcalRecProducers.HFPhase1Reconstructor_cfi import hfreco
+        process.globalReplace("hfreco", hfreco)
+    if hasattr(process,'datamixing_step'):
+        process=customise_mixing(process)
+    if hasattr(process,'simHcalTriggerPrimitiveDigis'):
+        process.simHcalTriggerPrimitiveDigis.upgradeHF = cms.bool(True)
+    if hasattr(process,'dqmoffline_step'):
+        process.digiTask.tagHBHE = cms.untracked.InputTag("simHcalDigis")
+        process.digiTask.tagHF = cms.untracked.InputTag("simHcalDigis")
+        process.digiTask.tagHO = cms.untracked.InputTag("simHcalDigis")
+    if hasattr(process,'validation_step'):
+        process.AllHcalDigisValidation.digiLabel = cms.string("simHcalDigis")
 
-    # Special Upgrade trick (if absent - regular case assumed)
-    process.es_hardcode.GainWidthsForTrigPrims = cms.bool(True)
+    return process
+    
+#intermediate customization (HCAL 2017, HE and HF upgrades - w/ SiPMs & QIE11)
+def customise_Hcal2017Full(process):
+    process=customise_Hcal2017(process)
+    
+    #use HE phase1 conditions - test SiPM/QIE11
+    process.es_hardcode.useHEUpgrade = cms.bool(True)
+
+    if hasattr(process,'reconstruction_step'):
+        # Customise HB/HE reco
+        from RecoLocalCalo.HcalRecProducers.HBHEPhase1Reconstructor_cfi import hbheprereco
+        process.globalReplace("hbheprereco", hbheprereco)
+        process.hbheprereco.saveInfos = cms.bool(True)
+        process.hbheprereco.digiLabelQIE8 = cms.InputTag("simHcalDigis")
+        process.hbheprereco.digiLabelQIE11 = cms.InputTag("simHcalDigis", "HBHEQIE11DigiCollection")
+
+    if hasattr(process,'simHcalTriggerPrimitiveDigis'):
+        process.simHcalTriggerPrimitiveDigis.upgradeHE = cms.bool(True)
+
+    return process
+    
+def customise_HcalPhase1(process):
+    process=load_HcalHardcode(process)
+
     process.es_hardcode.HEreCalibCutoff = cms.double(100.) #for aging
 
 
