@@ -211,13 +211,13 @@ CaloSubdetectorGeometry::DetIdSet HcalGeometry::getCells(const GlobalPoint& r,
 }
 
 unsigned int HcalGeometry::getHxSize(const int type) const {
-  unsigned int hxsize(0);
-  if (type == 1)       hxsize = m_hbIds->size();
-  else if (type == 2)  hxsize = m_heIds->size();
-  else if (type == 3)  hxsize = m_hoIds->size();
-  else if (type == 4)  hxsize = m_hfIds->size();
-  else if (type == 0)  hxsize = m_emptyIds->size();
-  return hxsize;
+   unsigned int hxsize(0);
+   if (type == 1)       hxsize = m_hbIds->size();
+   else if (type == 2)  hxsize = m_heIds->size();
+   else if (type == 3)  hxsize = m_hoIds->size();
+   else if (type == 4)  hxsize = m_hfIds->size();
+   else if (type == 0)  hxsize = m_emptyIds->size();
+   return hxsize;
 }
 
 DetId HcalGeometry::detIdFromBarrelAlignmentIndex(unsigned int i) {
