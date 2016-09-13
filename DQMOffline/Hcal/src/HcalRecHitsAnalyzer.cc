@@ -59,6 +59,16 @@ HcalRecHitsAnalyzer::HcalRecHitsAnalyzer(edm::ParameterSet const& conf) {
     maxDepthHO_ = hcons->getMaxDepth(3);
 
     es.get<CaloGeometryRecord > ().get(geometry);
+    const CaloGeometry* geo = geometry.product();
+    const HcalGeometry* gHB = (HcalGeometry*)(geo->getSubdetectorGeometry(DetId::Hcal,HcalBarrel));
+    const HcalGeometry* gHE = (HcalGeometry*)(geo->getSubdetectorGeometry(DetId::Hcal,HcalEndcap));
+    const HcalGeometry* gHO = (HcalGeometry*)(geo->getSubdetectorGeometry(DetId::Hcal,HcalOuter));
+    const HcalGeometry* gHF = (HcalGeometry*)(geo->getSubdetectorGeometry(DetId::Hcal,HcalForward));
+
+//    nChannels_[1] = gHB->getHxSize(1); 
+    nChannels_[2] = gHE->getHxSize(2); 
+//    nChannels_[3] = gHO->getHxSize(3); 
+//    nChannels_[4] = gHF->getHxSize(4);
 
     const std::vector<DetId>& hbCells = geometry->getValidDetIds(DetId::Hcal, HcalBarrel);
     const std::vector<DetId>& heCells = geometry->getValidDetIds(DetId::Hcal, HcalEndcap);
@@ -535,6 +545,10 @@ void HcalRecHitsAnalyzer::analyze(edm::Event const& ev, edm::EventSetup const& c
       if ( sub == 2){
 	 emean_vs_ieta_HE[depth-1]->Fill(double(ieta), en);
 	 occupancy_map_HE[depth-1]->Fill(double(ieta),double(iphi));
+      }
+      if ( sub == 3){
+	 emean_vs_ieta_HO->Fill(double(ieta), en);
+	 occupancy_map_HO->Fill(double(ieta),double(iphi));
       }
       if ( sub == 4){
 	 emean_vs_ieta_HF[depth-1]->Fill(double(ieta), en);

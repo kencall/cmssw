@@ -1,0 +1,68 @@
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+L1TRawToDigi Sequence configured for Stage-2 (2016) trigger. 
+L1TReco Sequence configured for Stage-2 (2016) trigger. 
+WARNING:  L1Trigger/L1TCommon/python/caloStage1LegacyFormatDigis_cfi.py has been deprecated...
+WARNING:  please use L1Trigger/L1TCalorimeter/python/caloStage1LegacyFormatDigis_cfi.py
+**************************************************************
+b tagging needs to be run on uncorrected jets. Hence, the JECs
+will first be undone for 'updatedPatJetsBTAG' and then applied to
+'updatedPatJetsTransientCorrectedBTAG'.
+**************************************************************
+12-Sep-2016 13:26:59 CDT  Initiating request to open file file:step2.root
+12-Sep-2016 13:27:01 CDT  Successfully opened file file:step2.root
+%MSG-e HLTPrescaleProvider:  PATTriggerProducer:patTrigger@streamBeginRun  12-Sep-2016 13:28:14 CDT Run: 1
+ Unknown L1T Type 0 - prescales will not be avaiable!
+%MSG
+in filling An exception of category 'InvalidReference' occurred.
+Exception Message:
+Trie::insert called with a key already in collection;
+key value: 
+
+304091140 1
+
+
+A fatal system signal has occurred: segmentation violation
+The following is the call stack containing the origin of the signal.
+
+Thread 2 (Thread 0x7febd893f700 (LWP 2866)):
+#0  0x0000003d2d00f2ad in waitpid () from /lib64/libpthread.so.0
+#1  0x00007febe9413d47 in edm::service::cmssw_stacktrace_fork() () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/pluginFWCoreServicesPlugins.so
+#2  0x00007febe94146d2 in edm::service::InitRootHandlers::stacktraceHelperThread() () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/pluginFWCoreServicesPlugins.so
+#3  0x00007febefde0a50 in std::(anonymous namespace)::execute_native_thread_routine (__p=<optimized out>) at ../../../../../libstdc++-v3/src/c++11/thread.cc:84
+#4  0x0000003d2d0079d1 in start_thread () from /lib64/libpthread.so.0
+#5  0x0000003d2c8e88fd in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7febefa79bc0 (LWP 2767)):
+#0  0x0000003d2c8df0d3 in poll () from /lib64/libc.so.6
+#1  0x00007febe9414534 in full_read.constprop () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/pluginFWCoreServicesPlugins.so
+#2  0x00007febe941479a in edm::service::InitRootHandlers::stacktraceFromThread() () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/pluginFWCoreServicesPlugins.so
+#3  0x00007febe941508e in sig_dostack_then_abort () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/pluginFWCoreServicesPlugins.so
+#4  <signal handler called>
+#5  0x00007febe8b9b654 in HcalGeometry::getHxSize(int) const () from /home/kencall/development/QIE10Simulation/segFaultTest/CMSSW_8_1_X_2016-09-07-1100/lib/slc6_amd64_gcc530/libGeometryHcalTowerAlgo.so
+#6  0x00007febb2a807e5 in HcalRecHitsAnalyzer::dqmBeginRun(edm::Run const&, edm::EventSetup const&) () from /home/kencall/development/QIE10Simulation/segFaultTest/CMSSW_8_1_X_2016-09-07-1100/lib/slc6_amd64_gcc530/pluginDQMOfflineHcal.so
+#7  0x00007febec2829e5 in DQMEDAnalyzer::beginRun(edm::Run const&, edm::EventSetup const&) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libDQMServicesCore.so
+#8  0x00007febf16f58eb in edm::stream::EDAnalyzerAdaptorBase::doStreamBeginRun(edm::StreamID, edm::RunPrincipal const&, edm::EventSetup const&, edm::ModuleCallingContext const*) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#9  0x00007febf16400b0 in edm::WorkerT<edm::stream::EDAnalyzerAdaptorBase>::implDoStreamBegin(edm::StreamID, edm::RunPrincipal const&, edm::EventSetup const&, edm::ModuleCallingContext const*) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#10 0x00007febf161fb6a in bool edm::Worker::runModule<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal const&, edm::EventSetup const&, edm::StreamID, edm::ParentContext const&, edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::Context const*) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#11 0x00007febf1622ebe in decltype ({parm#1}()) edm::convertException::wrap<bool edm::Worker::doWork<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal const&, edm::EventSetup const&, edm::StreamID, edm::ParentContext const&, edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::Context const*)::{lambda()#2}>(bool edm::Worker::doWork<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal const&, edm::EventSetup const&, edm::StreamID, edm::ParentContext const&, edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::Context const*)::{lambda()#2}) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#12 0x00007febf162314d in bool edm::Worker::doWork<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal const&, edm::EventSetup const&, edm::StreamID, edm::ParentContext const&, edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::Context const*) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#13 0x00007febf16233ea in decltype ({parm#1}()) edm::convertException::wrap<void edm::Path::processOneOccurrence<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal const&, edm::EventSetup const&, edm::StreamID const&, edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::Context const*)::{lambda()#1}>(void edm::Path::processOneOccurrence<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal const&, edm::EventSetup const&, edm::StreamID const&, edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::Context const*)::{lambda()#1}) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#14 0x00007febf16235b7 in void edm::Path::processOneOccurrence<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal const&, edm::EventSetup const&, edm::StreamID const&, edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::Context const*) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#15 0x00007febf162385e in decltype ({parm#1}()) edm::convertException::wrap<void edm::StreamSchedule::processOneStream<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal&, edm::EventSetup const&, bool)::{lambda()#1}>(void edm::StreamSchedule::processOneStream<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal&, edm::EventSetup const&, bool)::{lambda()#1}) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#16 0x00007febf1623ea7 in void edm::StreamSchedule::processOneStream<edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1> >(edm::OccurrenceTraits<edm::RunPrincipal, (edm::BranchActionType)1>::MyPrincipal&, edm::EventSetup const&, bool) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#17 0x00007febf169f522 in edm::EventProcessor::beginRun(statemachine::Run const&) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#18 0x00007febf15fd916 in statemachine::HandleRuns::beginRun(statemachine::Run const&) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#19 0x00007febf15fd9b7 in statemachine::HandleRuns::setupCurrentRun() () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#20 0x00007febf16001d5 in statemachine::NewRun::NewRun(boost::statechart::state<statemachine::NewRun, statemachine::HandleRuns, boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, (boost::statechart::history_mode)0>::my_context) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#21 0x00007febf16046de in boost::statechart::state<statemachine::NewRun, statemachine::HandleRuns, boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, (boost::statechart::history_mode)0>::shallow_construct(boost::intrusive_ptr<statemachine::HandleRuns> const&, boost::statechart::state_machine<statemachine::Machine, statemachine::Starting, std::allocator<void>, boost::statechart::null_exception_translator>&) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#22 0x00007febf16071c8 in boost::statechart::state<statemachine::HandleRuns, statemachine::HandleFiles, statemachine::NewRun, (boost::statechart::history_mode)0>::deep_construct(boost::intrusive_ptr<statemachine::HandleFiles> const&, boost::statechart::state_machine<statemachine::Machine, statemachine::Starting, std::allocator<void>, boost::statechart::null_exception_translator>&) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#23 0x00007febf160738a in boost::statechart::simple_state<statemachine::FirstFile, statemachine::HandleFiles, boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, (boost::statechart::history_mode)0>::react_impl(boost::statechart::event_base const&, void const*) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#24 0x00007febf16a6926 in boost::statechart::state_machine<statemachine::Machine, statemachine::Starting, std::allocator<void>, boost::statechart::null_exception_translator>::process_event(boost::statechart::event_base const&) () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#25 0x00007febf1699dc9 in edm::EventProcessor::runToCompletion() () from /cvmfs/cms-ib.cern.ch/2016-37/slc6_amd64_gcc530/cms/cmssw/CMSSW_8_1_X_2016-09-06-1100/lib/slc6_amd64_gcc530/libFWCoreFramework.so
+#26 0x000000000040c844 in main::{lambda()#1}::operator()() const ()
+#27 0x000000000040acc4 in main ()
+
+Current Modules:
+
+Module: HcalRecHitsAnalyzer (crashed)
+
+A fatal system signal has occurred: segmentation violation

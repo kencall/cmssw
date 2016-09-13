@@ -1,0 +1,143 @@
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+L1TRawToDigi Sequence configured for Stage-2 (2016) trigger. 
+L1TReco Sequence configured for Stage-2 (2016) trigger. 
+WARNING:  L1Trigger/L1TCommon/python/caloStage1LegacyFormatDigis_cfi.py has been deprecated...
+WARNING:  please use L1Trigger/L1TCalorimeter/python/caloStage1LegacyFormatDigis_cfi.py
+**************************************************************
+b tagging needs to be run on uncorrected jets. Hence, the JECs
+will first be undone for 'updatedPatJetsBTAG' and then applied to
+'updatedPatJetsTransientCorrectedBTAG'.
+**************************************************************
+12-Sep-2016 11:19:11 CDT  Initiating request to open file file:step2.root
+12-Sep-2016 11:19:13 CDT  Successfully opened file file:step2.root
+%MSG-e HLTPrescaleProvider:  PATTriggerProducer:patTrigger@streamBeginRun  12-Sep-2016 11:20:24 CDT Run: 1
+ Unknown L1T Type 0 - prescales will not be avaiable!
+%MSG
+in filling An exception of category 'InvalidReference' occurred.
+Exception Message:
+Trie::insert called with a key already in collection;
+key value: 
+
+304091140 1
+Begin processing the 1st record. Run 1, Event 1, LumiSection 1 at 12-Sep-2016 11:21:05.269 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:27 CDT Run: 1 Event: 1
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:27 CDT Run: 1 Event: 1
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-e HLTPrescaleProvider:  PATTriggerProducer:patTrigger  12-Sep-2016 11:21:29 CDT Run: 1 Event: 1
+ Using processName 'HLT': Unknown L1T Type 0 - can not determine prescale set index!
+%MSG
+%MSG-e HLTPrescaleProvider:  PATTriggerProducer:patTrigger  12-Sep-2016 11:21:29 CDT Run: 1 Event: 1
+ Unknown L1T Type 0 - can not determine L1T prescale! 
+%MSG
+%MSG-e HLTPrescaleProvider:  PATTriggerProducer:patTrigger  12-Sep-2016 11:21:29 CDT Run: 1 Event: 1
+ Using processName 'HLT': Unknown L1T Type 0 - can not determine prescale set index!
+%MSG
+%MSG-e HLTPrescaleProvider:  PATTriggerProducer:patTrigger  12-Sep-2016 11:21:29 CDT Run: 1 Event: 1
+ Unknown L1T Type 0 - can not determine L1T prescale! 
+%MSG
+Begin processing the 2nd record. Run 1, Event 2, LumiSection 1 at 12-Sep-2016 11:21:29.474 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:31 CDT Run: 1 Event: 2
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:31 CDT Run: 1 Event: 2
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w L3Absolute not found:  PATJetUpdater:updatedPatJetsBTAG  12-Sep-2016 11:21:31 CDT Run: 1 Event: 2
+L2L3Residual and L3Absolute are not part of the jetCorrFactors
+of module patJetCorrFactorsBTAG. Jets will remain uncorrected.
+%MSG
+Begin processing the 3rd record. Run 1, Event 3, LumiSection 1 at 12-Sep-2016 11:21:32.271 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:33 CDT Run: 1 Event: 3
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:33 CDT Run: 1 Event: 3
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+Begin processing the 4th record. Run 1, Event 4, LumiSection 1 at 12-Sep-2016 11:21:34.385 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:35 CDT Run: 1 Event: 4
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:35 CDT Run: 1 Event: 4
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+Begin processing the 5th record. Run 1, Event 5, LumiSection 1 at 12-Sep-2016 11:21:36.301 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:37 CDT Run: 1 Event: 5
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:37 CDT Run: 1 Event: 5
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+Begin processing the 6th record. Run 1, Event 6, LumiSection 1 at 12-Sep-2016 11:21:38.372 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:39 CDT Run: 1 Event: 6
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:39 CDT Run: 1 Event: 6
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+Begin processing the 7th record. Run 1, Event 7, LumiSection 1 at 12-Sep-2016 11:21:40.559 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:42 CDT Run: 1 Event: 7
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:42 CDT Run: 1 Event: 7
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+Begin processing the 8th record. Run 1, Event 8, LumiSection 1 at 12-Sep-2016 11:21:42.698 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:44 CDT Run: 1 Event: 8
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:44 CDT Run: 1 Event: 8
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+Begin processing the 9th record. Run 1, Event 9, LumiSection 1 at 12-Sep-2016 11:21:44.842 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:46 CDT Run: 1 Event: 9
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:46 CDT Run: 1 Event: 9
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+Begin processing the 10th record. Run 1, Event 10, LumiSection 1 at 12-Sep-2016 11:21:46.921 CDT
+%MSG-w NoModule:  ByClusterSummaryMultiplicityPairEventFilter:manystripclus53X  12-Sep-2016 11:21:48 CDT Run: 1 Event: 10
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w NoModule:   ByClusterSummaryMultiplicityPairEventFilter:toomanystripclus53X  12-Sep-2016 11:21:48 CDT Run: 1 Event: 10
+No information for requested module 5. Please check in the Provinence Infomation for proper modules.
+%MSG
+%MSG-w BSFitter:  AlcaBeamMonitor:AlcaBeamMonitor@endLumi  12-Sep-2016 11:21:48 CDT Run: 1 Lumi: 1
+need at least 150 tracks to run beamline fitter.
+%MSG
+12-Sep-2016 11:21:51 CDT  Closed file file:step2.root
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 BSFitter             -w AlcaBeamMonitor:                       1        1
+    2 L3Absolute not found -w PATJetUpdater:up                       1        1
+    3 NoModule             -w ByClusterSummary                      10       10
+    4 NoModule             -w ByClusterSummary                      10       10
+    5 HLTPrescaleProvider  -e PATTriggerProduc                       4        4
+    6 HLTPrescaleProvider  -e PATTriggerProduc                       1        1
+    7 fileAction           -s file_close                             1        1
+    8 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 BSFitter             Run: 1 Lumi: 1                    
+    2 L3Absolute not found 1/2                               
+    3 NoModule             1/1              1/2              1/10
+    4 NoModule             1/1              1/2              1/10
+    5 HLTPrescaleProvider  1/1              1/1              1/1
+    6 HLTPrescaleProvider  Run: 1                            
+    7 fileAction           PostEndRun                        
+    8 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                22                  22
+Error                   5                   5
+System                  3                   3

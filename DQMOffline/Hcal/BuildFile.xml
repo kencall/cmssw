@@ -10,6 +10,7 @@
 <use   name="DataFormats/METReco"/>
 <use   name="Geometry/CaloGeometry"/>
 <use   name="Geometry/CaloTopology"/>
+<use   name="Geometry/HcalTowerAlgo"/>
 <use   name="CondFormats/EcalObjects"/>
 <use   name="CondFormats/DataRecord"/>
 <use   name="CondFormats/HcalObjects"/>
